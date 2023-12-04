@@ -5,6 +5,9 @@ import re
 
 def openFile():
     fileInput = filedialog.askopenfile()
+    if fileInput:
+        selected_file_label.confg(text="Selected File: {fileInput}")
+
    
 
 def pdf_Run():
@@ -21,5 +24,8 @@ button.place(relx=0.5, rely=0.5, anchor=tkinter.CENTER)
 
 run_PDF = customtkinter.CTkButton(root, text="Run PDF", command=pdf_Run)
 run_PDF.pack(padx=20, pady=20)
+
+selected_file_label = tkinter.Label(root, text="Selected File")
+selected_file_label.pack()
 
 root.mainloop()
